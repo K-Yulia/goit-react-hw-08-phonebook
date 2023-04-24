@@ -1,6 +1,6 @@
 import { List } from './ContactList.styled';
 import { useSelector } from 'react-redux';
-import { selectVisibleContacts } from 'redux/selectors';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
 import { Contact } from './Contact';
 
 export const ContactList = () => {
@@ -13,7 +13,7 @@ export const ContactList = () => {
             <Contact
               key={contact.id}
               name={contact.name}
-              phone={contact.phone}
+              number={contact.number}
               id={contact.id}
             />
           );
