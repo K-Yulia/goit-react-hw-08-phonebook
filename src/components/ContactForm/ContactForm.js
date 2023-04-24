@@ -2,8 +2,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Field, Btn, ErrorMessage } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -43,7 +43,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={ContactSchema}
       onSubmit={(values, actions) => {
@@ -58,8 +58,8 @@ export const ContactForm = () => {
         </label>
         <label>
           Number
-          <Field type="tel" name="phone" />
-          <ErrorMessage name="phone" component="div" />
+          <Field type="tel" name="number" />
+          <ErrorMessage name="number" component="div" />
         </label>
         <Btn type="submit">Add contact</Btn>
       </Form>
