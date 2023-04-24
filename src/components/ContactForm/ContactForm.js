@@ -13,7 +13,7 @@ const ContactSchema = Yup.object().shape({
       'Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore dArtagnan'
     )
     .required('Required'),
-  phone: Yup.string()
+  number: Yup.string()
     .trim()
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,

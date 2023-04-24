@@ -8,7 +8,7 @@ import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { Loader } from '../components/Loader/Loader';
 
-export const ContactsPage = () => {
+export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -27,4 +27,4 @@ export const ContactsPage = () => {
       {/* <GlobalStyle /> */}
     </div>
   );
-};
+}
