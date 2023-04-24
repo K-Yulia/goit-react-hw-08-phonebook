@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { Loader } from '../components/Loader/Loader';
+import { Container, Title } from './Pages.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -17,14 +18,14 @@ export default function Contacts() {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <Container>
+      <Title>Phonebook</Title>
       <ContactForm />
-      <h2>Contacts</h2>
+      <Title>Contacts</Title>
       <Filter />
       {isLoading && !error && <Loader />}
       <ContactList />
       {/* <GlobalStyle /> */}
-    </div>
+    </Container>
   );
 }
